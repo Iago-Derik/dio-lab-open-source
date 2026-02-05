@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas e Calendário</title>
+    <link rel="stylesheet" href="assets/css/calendar.css">
+</head>
+<body>
+    <header>
+        <h1>Gerenciador de Tarefas</h1>
+        <a href="index.html">Voltar para Home</a>
+    </header>
+
+    <main>
+        <div class="controls">
+            <div class="month-navigation">
+                <button id="prevMonth">&lt;</button>
+                <select id="monthSelect"></select>
+                <span id="yearDisplay" style="font-weight: bold; margin-left: 10px;"></span>
+                <button id="nextMonth">&gt;</button>
+            </div>
+            <button id="clearDataBtn" style="background-color: #ff4d4d; color: white; border: none; padding: 0.5rem; border-radius: 4px; cursor: pointer;">Limpar Dados</button>
+        </div>
+
+        <div class="app-container">
+            <aside class="sidebar">
+                <h2>Pessoas</h2>
+                <div class="input-group">
+                    <input type="text" id="personInput" placeholder="Nome da pessoa">
+                    <button id="addPersonBtn" class="btn-action">Adicionar Pessoa</button>
+                </div>
+                <ul id="peopleList" class="list-items"></ul>
+
+                <h2 style="margin-top: 2rem;">Tarefas</h2>
+                <div class="input-group">
+                    <label>Título</label>
+                    <input type="text" id="taskInput" placeholder="Ex: Limpeza, Cozinha...">
+                </div>
+                <div class="input-group">
+                    <label>Cor</label>
+                    <input type="color" id="taskColor" value="#30A3DC">
+                </div>
+                <div class="input-group">
+                    <label>Distribuição</label>
+                    <select id="taskType">
+                        <option value="even">Dias Pares</option>
+                        <option value="odd">Dias Ímpares</option>
+                        <option value="random">Aleatório (Todos os dias)</option>
+                    </select>
+                </div>
+                <button id="addTaskBtn" class="btn-primary">Criar e Distribuir</button>
+                <ul id="taskList" class="list-items"></ul>
+            </aside>
+
+            <section class="calendar-container">
+                <div class="calendar-header">
+                    <h3>Calendário</h3>
+                </div>
+                <div id="calendarGrid" class="calendar-grid">
+                    <!-- Javascript will populate this -->
+                </div>
+
+                <div class="legend">
+                    <h4>Legenda</h4>
+                    <div id="legendContainer" class="legend-items">
+                        <!-- Javascript will populate this -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="assets/js/calendar.js"></script>
+</body>
+</html>
